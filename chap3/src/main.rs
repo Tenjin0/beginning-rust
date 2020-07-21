@@ -26,9 +26,8 @@ fn main() {
     // this is a comment
     println!("pass by value: {}; variable b: {}",  increase(b), b);
 
-    let  b_ref: &mut i32 = &mut b;
     // cannot use increase in println cause borrowing
-    println!("pass and mut by reference: {}; variable b: {}",  increase_ref(b_ref), b);
+    println!("pass and mut by reference: {}; variable b: {}",  increase_ref(&mut b), b);
 
   
 }
