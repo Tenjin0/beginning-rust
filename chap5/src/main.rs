@@ -5,7 +5,6 @@ fn main() {
         height: u32
     }
 
-
     impl Rectangle {
 
         fn description(&self) -> String {
