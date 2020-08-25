@@ -1,8 +1,3 @@
-use crate::trait_samples::Summary;
-
-mod trait_samples;
-mod lifetime;
-
 fn largest<T: PartialOrd + Copy>(list: &[T]) -> T {
     let mut found = list[0];
     for &item in list {
@@ -58,26 +53,5 @@ fn main() {
     let v = vec![34, 50, 25, 100, 65];
 
     println!("{}", largest(&v));
-
-    let tweet = trait_samples::Tweet {
-        username: String::from("horse_ebooks"),
-        content: String::from(
-            "of course, as you probably already know, people"
-        ),
-        reply: false,
-        retweet: false
-    };
-
-    println!("{}", tweet.summarize());
-
-    let str1 = String::from("abcd");
-    {
-        let str2 = "uvwxyz";
-        let mut result = lifetime::longest(str1.as_str(), str2);
-        println!("{}", result);
-        result = lifetime::longest2(str1.as_str(), str2);
-        println!("{}", result);
-
-    }
 
 }  
